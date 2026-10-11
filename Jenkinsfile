@@ -1,5 +1,6 @@
 pipeline{
     agent any
+    
     stages{
         stage("Restore the project"){
             steps{
@@ -7,7 +8,9 @@ pipeline{
             }
         }
         stage("Build the project"){
-            bat "dotnet build --no-restore"
+            steps{
+                bat "dotnet build --no-restore"
+            } 
         }
         stage("Run the tests in parallel"){
             parallel{
