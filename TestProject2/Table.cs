@@ -64,8 +64,8 @@ namespace TestProject2
             }
 
             // Verify the file was created and has content
-            Assert.IsTrue(File.Exists(path), "CSV file was not created");
-            Assert.IsTrue(new FileInfo(path).Length > 0, "CSV file is empty");
+            Assert.That(File.Exists(path), Is.True, "CSV file was not created");
+            Assert.That(new FileInfo(path).Length, Is.GreaterThan(0), "CSV file is empty");
         }
     }
 }
