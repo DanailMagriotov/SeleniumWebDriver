@@ -1,6 +1,5 @@
 pipeline{
     agent any
-
     stages{
         stage("Restore the project"){
             steps{
