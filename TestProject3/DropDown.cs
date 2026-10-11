@@ -12,6 +12,13 @@ namespace TestProject3
     {
         IWebDriver driver;
 
+        [TearDown]
+        public void TearDown()
+        {
+            driver.Quit();
+            driver.Dispose();
+        }
+
         [SetUp]
         public void SetUp()
         {
